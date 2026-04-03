@@ -1,6 +1,6 @@
 import nltk
 
-# Check if punkt is available; if not, download it
+# Download punkt tokenizer if missing
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
