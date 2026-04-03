@@ -1,7 +1,10 @@
 import nltk
 
-nltk.download('punkt')
-nltk.download('stopwords')
+# Check if punkt is available; if not, download it
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
 import streamlit as st
 import pickle
 import sklearn
