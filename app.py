@@ -1,9 +1,13 @@
+import streamlit as st
 import nltk
 
-# Download punkt tokenizer if not already present
-nltk.download('punkt', quiet=True)
+# Check if 'punkt' tokenizer is available, if not download it
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt', quiet=True)
 
-import streamlit as st
+
 import pickle
 import sklearn
 import string
